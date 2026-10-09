@@ -42,7 +42,7 @@ let continuar = true;
 
 while (continuar) {
     const comando = prompt(
-        'Ingrese un comando: "nuevo", "listar", "borrar" o "salir"'
+        'Ingresá un comando: "nuevo", "listar", "borrar" o "salir"'
     );
 
     if (comando === null) {
@@ -52,7 +52,7 @@ while (continuar) {
 
     switch (comando.trim().toLowerCase()) {
         case "nuevo": {
-            const nuevoItem = prompt("Ingrese el producto que desea agregar:");
+            const nuevoItem = prompt("Ingresá el producto que queres agregar:");
 
             if (nuevoItem !== null && nuevoItem.trim() !== "") {
                 listadeSuper.push(nuevoItem.trim());
@@ -65,7 +65,7 @@ while (continuar) {
             break;
         case "borrar": {
             const indiceIngresado = prompt(
-                "Ingrese el índice del producto que desea eliminar:"
+                "Ingresá el índice del producto que queres eliminar:"
             );
             const indice = Number(indiceIngresado);
 
