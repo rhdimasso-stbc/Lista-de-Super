@@ -1,4 +1,5 @@
-// Arreglo inicial
+// Actividad Lista de Super I
+
 let listadeSuper = [];
 
 listadeSuper[0] = "sal";
@@ -14,6 +15,8 @@ console.log(listadeSuper[0]);
 let ultimoElemento = listadeSuper.length - 1;
 console.log(listadeSuper[ultimoElemento]);
 
+// Actividad Lista de Super II
+
 listadeSuper.push("fideos")
 listadeSuper.push("harina");
 
@@ -24,6 +27,8 @@ console.log("Cantidad total actual:", listadeSuper.length);
 
 let noHabia = listadeSuper.pop();
 let comprado = listadeSuper.shift();
+
+// Actividad Lista de Super III
 
 console.log("Tamaño final de la lista:", listadeSuper.length);
 
