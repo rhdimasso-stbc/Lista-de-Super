@@ -8,7 +8,7 @@ listadeSuper[3] = "huevos";
 listadeSuper[4] = "leche";
 listadeSuper[5] = "tomate";
 
-console.log(listadeSuper);gi
+console.log(listadeSuper);
 console.log(listadeSuper[0]);
 
 let ultimoElemento = listadeSuper.length - 1;
@@ -26,3 +26,63 @@ let noHabia = listadeSuper.pop();
 let comprado = listadeSuper.shift();
 
 console.log("Tamaño final de la lista:", listadeSuper.length);
+
+function logItems(items) {
+    items.forEach((item, index) => {
+        console.log(`${index}: ${item}`);
+    });
+}
+
+let continuar = true;
+
+while (continuar) {
+    const comando = prompt(
+        'Ingrese un comando: "nuevo", "listar", "borrar" o "salir"'
+    );
+
+    if (comando === null) {
+        continuar = false;
+        continue;
+    }
+
+    switch (comando.trim().toLowerCase()) {
+        case "nuevo": {
+            const nuevoItem = prompt("Ingrese el producto que desea agregar:");
+
+            if (nuevoItem !== null && nuevoItem.trim() !== "") {
+                listadeSuper.push(nuevoItem.trim());
+                console.log(`Producto agregado: ${nuevoItem.trim()}`);
+            }
+            break;
+        }
+        case "listar":
+            logItems(listadeSuper);
+            break;
+        case "borrar": {
+            const indiceIngresado = prompt(
+                "Ingrese el índice del producto que desea eliminar:"
+            );
+            const indice = Number(indiceIngresado);
+
+            if (
+                indiceIngresado !== null &&
+                indiceIngresado.trim() !== "" &&
+                Number.isInteger(indice) &&
+                indice >= 0 &&
+                indice < listadeSuper.length
+            ) {
+                const [productoEliminado] = listadeSuper.splice(indice, 1);
+                console.log(`Producto eliminado: ${productoEliminado}`);
+            } else if (indiceIngresado !== null) {
+                console.log("Índice inválido.");
+            }
+            break;
+        }
+        case "salir":
+            continuar = false;
+            console.log("Súper App finalizada.");
+            break;
+        default:
+            console.log('Comando inválido. Use "nuevo", "listar", "borrar" o "salir".');
+    }
+}
